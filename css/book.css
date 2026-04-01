@@ -1,0 +1,157 @@
+/* =====================================================
+   ROSIE'S BEAUTY SPA — BOOK PAGE
+   Mobile-first. Token-driven.
+   ===================================================== */
+
+/* ─── Book Intro ──────────────────────────────────── */
+.book-intro {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--space-8);
+}
+
+.book-intro p {
+  font-size: var(--text-subhead);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-top: var(--space-3);
+}
+
+/* ─── Book Grid ───────────────────────────────────── */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+/* ─── Book Card ───────────────────────────────────── */
+.book-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-6);
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.book-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-elevated);
+  text-decoration: none;
+  color: inherit;
+}
+
+.book-card:active {
+  transform: scale(0.98);
+  transition-timing-function: var(--spring);
+}
+
+.book-card__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--accent-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-3);
+  font-size: 28px;
+  color: var(--accent);
+}
+
+.book-card__name {
+  font-family: var(--font-heading);
+  font-size: var(--text-title3);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.book-card__meta {
+  font-size: var(--text-caption1);
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.book-card__link {
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: var(--space-3);
+  display: block;
+  font-size: var(--text-subhead);
+}
+
+/* ─── Book Fallback ───────────────────────────────── */
+.book-fallback {
+  text-align: center;
+  margin-top: var(--space-8);
+  padding: var(--space-6);
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.book-fallback p {
+  font-size: var(--text-subhead);
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.book-fallback__phone {
+  font-size: var(--text-title2);
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  text-decoration: none;
+}
+
+.book-fallback__phone:hover {
+  color: var(--accent-hover);
+  text-decoration: none;
+}
+
+.book-fallback__actions {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* ─── Responsive ──────────────────────────────────── */
+@media (min-width: 600px) {
+  .book-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Gift card spans full width on last row */
+  .book-card--gift {
+    grid-column: span 3;
+    max-width: 360px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 599px) {
+  .book-card {
+    padding: var(--space-4);
+  }
+
+  .book-card__icon {
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+  }
+}
