@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Page Not Found | Rosie's Beauty Spa</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Browse our services or book an appointment at Rosie's Beauty Spa.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/rosies-logo.png">
+
+  <!-- Font Preloads -->
+  <link rel="preload" href="assets/fonts/Cardo-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Figtree-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Figtree-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    .error-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      text-align: center;
+      padding: var(--space-8) var(--space-5);
+    }
+
+    .error-page__logo {
+      margin-bottom: var(--space-6);
+    }
+
+    .error-page__logo img {
+      height: 56px;
+      width: auto;
+    }
+
+    .error-page__code {
+      font-family: var(--font-heading);
+      font-size: clamp(72px, 15vw, 120px);
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: var(--space-2);
+    }
+
+    .error-page__title {
+      font-family: var(--font-heading);
+      font-size: var(--text-title1);
+      font-weight: 700;
+      margin-bottom: var(--space-3);
+    }
+
+    .error-page__desc {
+      font-size: var(--text-body);
+      color: var(--text-secondary);
+      max-width: 420px;
+      line-height: 1.6;
+      margin-bottom: var(--space-8);
+    }
+
+    .error-page__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      justify-content: center;
+    }
+
+    .error-page__divider {
+      width: 48px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin: var(--space-5) auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ Navigation ═══ -->
+  <div id="site-nav" class="site-nav site-nav--solid"></div>
+
+  <main>
+    <div class="error-page">
+
+      <div class="error-page__logo">
+        <img src="assets/images/rosies-logo.png" alt="Rosie's Beauty Spa" loading="eager">
+      </div>
+
+      <div class="error-page__code">404</div>
+      <div class="error-page__divider"></div>
+      <h1 class="error-page__title">Page Not Found</h1>
+      <p class="error-page__desc">The page you're looking for has moved, been removed, or never existed. Let's get you back to where you need to be.</p>
+
+      <div class="error-page__links">
+        <a href="/" class="btn-primary">
+          <i class="ph ph-house"></i>
+          Go Home
+        </a>
+        <a href="/services/" class="btn-secondary">
+          <i class="ph ph-sparkle"></i>
+          Our Services
+        </a>
+        <a href="/book" class="btn-secondary">
+          <i class="ph ph-calendar-check"></i>
+          Book Online
+        </a>
+        <a href="/contact" class="btn-secondary">
+          <i class="ph ph-chat-circle"></i>
+          Contact Us
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ═══ Footer ═══ -->
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <!-- ═══ Scripts ═══ -->
+  <script src="js/components.js" defer></script>
+  <script src="js/nav.js" defer></script>
+
+</body>
+</html>
