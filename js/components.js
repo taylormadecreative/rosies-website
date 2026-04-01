@@ -118,7 +118,7 @@
         </div>
         <div class="site-footer__contact-item">
           <i class="ph ph-map-pin"></i>
-          <span>Fort Worth, TX</span>
+          <span>Arlington, TX 76013</span>
         </div>
         <div class="site-footer__contact-item">
           <i class="ph ph-instagram-logo"></i>
@@ -202,10 +202,17 @@
     });
   }
 
+  /* ─── Auto-open first service card ────────────────── */
+  function autoOpenFirstCard() {
+    var firstCard = document.querySelector('.service-card');
+    if (firstCard) firstCard.classList.add('service-card--open');
+  }
+
   /* ─── Init ─────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
     injectComponents();
     initFAQ();
     initServiceCards();
+    autoOpenFirstCard();
   });
 })();
