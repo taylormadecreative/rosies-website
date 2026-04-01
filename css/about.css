@@ -1,0 +1,181 @@
+/* =====================================================
+   ROSIE'S BEAUTY SPA — ABOUT PAGE
+   Mobile-first. Token-driven.
+   ===================================================== */
+
+/* ─── About Hero ──────────────────────────────────── */
+.about-hero {
+  background-color: var(--bg-hero);
+}
+
+/* ─── About Story ─────────────────────────────────── */
+.about-story {
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: var(--text-body);
+  font-size: var(--text-body);
+}
+
+.about-story p + p {
+  margin-top: var(--space-5);
+}
+
+/* ─── About Philosophy ────────────────────────────── */
+.about-philosophy {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: var(--text-title3);
+  text-align: center;
+  margin: var(--space-8) 0;
+  color: var(--accent);
+  line-height: 1.5;
+}
+
+/* ─── About Credentials ───────────────────────────── */
+.about-credentials {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.about-credential {
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  padding: var(--space-5);
+  text-align: center;
+  box-shadow: var(--shadow-card);
+}
+
+.about-credential__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-circle);
+  background: var(--accent-subtle);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin: 0 auto var(--space-3);
+}
+
+.about-credential__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-headline);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.about-credential__desc {
+  font-size: var(--text-subhead);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ─── About Press ─────────────────────────────────── */
+.about-press {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.about-press__label {
+  font-size: var(--text-caption1);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+}
+
+.about-press__logos {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-8);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-press__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.about-press__item-name {
+  font-family: var(--font-heading);
+  font-size: var(--text-title3);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.about-press__item-type {
+  font-size: var(--text-caption1);
+  color: var(--text-secondary);
+}
+
+/* ─── About Gallery ───────────────────────────────── */
+.about-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.about-gallery__img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+  display: block;
+}
+
+/* ─── About CTA ───────────────────────────────────── */
+.about-cta {
+  text-align: center;
+  padding: var(--space-8) 0;
+}
+
+.about-cta h2 {
+  margin-bottom: var(--space-3);
+}
+
+.about-cta p {
+  font-size: var(--text-subhead);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-6);
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* ─── Responsive ──────────────────────────────────── */
+@media (min-width: 600px) {
+  .about-credentials {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-press {
+    flex-direction: row;
+    gap: var(--space-8);
+    text-align: left;
+  }
+
+  .about-press__label {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .about-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
