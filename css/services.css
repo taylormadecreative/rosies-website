@@ -1,0 +1,125 @@
+/* =====================================================
+   ROSIE'S BEAUTY SPA — SERVICES PAGES
+   Category grids, service lists, related services,
+   social proof strip. Mobile-first.
+   ===================================================== */
+
+/* ─── Services Hero (uses .hero--short) ────────────── */
+.services-hero {
+  min-height: 300px;
+}
+
+.services-hero .hero__content {
+  padding-bottom: var(--space-6);
+}
+
+/* ─── Category Grid ────────────────────────────────── */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+}
+
+@media (min-width: 769px) {
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ─── Service List ─────────────────────────────────── */
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ─── Related Services ─────────────────────────────── */
+.related-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4);
+}
+
+/* ─── Social Proof Strip ───────────────────────────── */
+.social-proof-strip {
+  text-align: center;
+  font-size: var(--text-caption1);
+  color: var(--text-secondary);
+  padding: var(--space-4) 0;
+}
+
+.social-proof-strip .stars {
+  color: #F4B942;
+  letter-spacing: 2px;
+}
+
+/* ─── Sale Badge ───────────────────────────────────── */
+.service-card__sale {
+  display: inline-block;
+  background: var(--success);
+  color: #fff;
+  font-size: var(--text-caption2);
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  margin-left: var(--space-2);
+}
+
+/* ─── Package Display Card ─────────────────────────── */
+.package-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-6);
+  text-align: center;
+}
+
+.package-card__icon {
+  font-size: 40px;
+  color: var(--accent);
+  margin-bottom: var(--space-3);
+}
+
+.package-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-title3);
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+}
+
+.package-card__desc {
+  font-size: var(--text-subhead);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-5);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── New Client Highlight ─────────────────────────── */
+.new-client-banner {
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-5);
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.new-client-banner__badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: var(--text-caption1);
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-2);
+}
+
+.new-client-banner p {
+  font-size: var(--text-subhead);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
