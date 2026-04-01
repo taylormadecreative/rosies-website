@@ -93,9 +93,15 @@
 /* ─── Treatments Grid ──────────────────────────────── */
 .treatments-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--space-4);
   margin-top: var(--space-8);
+}
+
+@media (min-width: 480px) {
+  .treatments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .treatment-preview {
@@ -161,14 +167,8 @@
   flex-shrink: 0;
 }
 
-/* Hide scrollbar but keep scroll functionality */
-.reviews-scroll::-webkit-scrollbar {
-  display: none;
-}
-
 .reviews-scroll {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  scroll-padding-left: 20px;
 }
 
 /* ─── About Ashley Teaser ──────────────────────────── */

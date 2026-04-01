@@ -172,15 +172,22 @@
       if (!item) return;
 
       item.classList.toggle('faq__item--open');
+
+      var btn = question.tagName === 'BUTTON' ? question : question.querySelector('button');
+      if (btn) btn.setAttribute('aria-expanded', item.classList.contains('faq__item--open'));
     });
   }
 
   /* ─── Service Card Accordion ───────────────────────── */
   function initServiceCards() {
-    document.addEventListener('click', function (e) {
-      var header = e.target.closest('.service-card__header');
-      if (!header) return;
+    // Add keyboard accessibility attributes to all service card headers
+    document.querySelectorAll('.service-card__header').forEach(function (header) {
+      header.setAttribute('tabindex', '0');
+      header.setAttribute('role', 'button');
+      header.setAttribute('aria-expanded', 'false');
+    });
 
+    function toggleServiceCard(header) {
       var card = header.closest('.service-card');
       if (!card) return;
 
@@ -189,16 +196,34 @@
       // Close all sibling cards (accordion behavior)
       var container = card.parentElement;
       if (container) {
-        var siblings = container.querySelectorAll('.service-card--open');
-        siblings.forEach(function (s) {
+        container.querySelectorAll('.service-card--open').forEach(function (s) {
           s.classList.remove('service-card--open');
+          var sibHeader = s.querySelector('.service-card__header');
+          if (sibHeader) sibHeader.setAttribute('aria-expanded', 'false');
         });
       }
 
       // Toggle clicked card
       if (!wasOpen) {
         card.classList.add('service-card--open');
+        header.setAttribute('aria-expanded', 'true');
+      } else {
+        header.setAttribute('aria-expanded', 'false');
       }
+    }
+
+    document.addEventListener('click', function (e) {
+      var header = e.target.closest('.service-card__header');
+      if (!header) return;
+      toggleServiceCard(header);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      var header = e.target.closest('.service-card__header');
+      if (!header) return;
+      e.preventDefault();
+      toggleServiceCard(header);
     });
   }
 

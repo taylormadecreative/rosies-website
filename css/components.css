@@ -556,9 +556,17 @@
 .hero .social-proof {
   display: inline-flex;
   gap: 16px;
-  font-size: var(--text-caption1);
+  font-size: var(--text-footnote);
   color: #fff;
   margin-top: var(--space-4);
+}
+
+.hero .breadcrumbs,
+.hero .breadcrumbs a {
+  color: rgba(255, 255, 255, 0.7);
+}
+.hero .breadcrumbs a:hover {
+  color: #fff;
 }
 
 @media (min-width: 769px) {
