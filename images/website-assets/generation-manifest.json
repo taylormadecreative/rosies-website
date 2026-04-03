@@ -1,0 +1,90 @@
+{
+  "generated": "2026-04-03T19:21:43.267Z",
+  "outputDir": "/Users/nelsontaylor/Documents/rosies-website/images/website-assets",
+  "prompts": [
+    {
+      "id": "1",
+      "filename": "hero-homepage.png",
+      "status": "failed",
+      "error": "Browser not running"
+    },
+    {
+      "id": "2",
+      "filename": "hero-facials.png",
+      "status": "failed",
+      "error": "Browser not running"
+    },
+    {
+      "id": "3",
+      "filename": "hero-microneedling.png",
+      "status": "failed",
+      "error": "Browser not running"
+    },
+    {
+      "id": "4",
+      "filename": "hero-waxing.png",
+      "status": "failed",
+      "error": "Browser not running"
+    },
+    {
+      "id": "5",
+      "filename": "hero-about.png",
+      "status": "failed",
+      "error": "Browser not running"
+    },
+    {
+      "id": "6",
+      "filename": "before-after-hyperpigmentation.png",
+      "status": "failed",
+      "error": "Browser not running"
+    },
+    {
+      "id": "7",
+      "filename": "before-after-acne-scarring.png",
+      "status": "failed",
+      "error": "Browser not running"
+    },
+    {
+      "id": "8",
+      "filename": "before-after-uneven-tone.png",
+      "status": "failed",
+      "error": "Browser not running"
+    },
+    {
+      "id": "9",
+      "filename": "card-body-treatment.png",
+      "status": "failed",
+      "error": "Browser not running"
+    },
+    {
+      "id": "10",
+      "filename": "card-packages-gifts.png",
+      "status": "failed",
+      "error": "Browser not running"
+    },
+    {
+      "id": "11",
+      "filename": "blog-skincare-routine.png",
+      "status": "failed",
+      "error": "Browser not running"
+    },
+    {
+      "id": "12",
+      "filename": "blog-first-facial.png",
+      "status": "failed",
+      "error": "Browser not running"
+    },
+    {
+      "id": "13",
+      "filename": "blog-microneedling-safety.png",
+      "status": "failed",
+      "error": "Browser not running"
+    },
+    {
+      "id": "14",
+      "filename": "og-social-share.png",
+      "status": "failed",
+      "error": "Browser not running"
+    }
+  ]
+}
