@@ -113,7 +113,7 @@
   <!-- ═══ Navigation ═══ -->
   <div id="site-nav" class="site-nav site-nav--transparent"></div>
 
-  <main>
+  <main id="main-content">
 
     <!-- ═══ Hero ═══ -->
     <section class="hero hero--short" style="background: linear-gradient(135deg, var(--bg-hero) 0%, var(--bg-hero-end) 100%);">
@@ -314,6 +314,14 @@
                   Send Message
                 </button>
               </form>
+
+              <div id="contact-success" class="contact-form__success" style="display:none;">
+                <div style="text-align:center; padding: var(--space-8);">
+                  <i class="ph ph-check-circle" style="font-size: 48px; color: var(--accent); display: block; margin-bottom: var(--space-4);"></i>
+                  <h3 style="font-family: var(--font-heading); font-weight: 700; margin-bottom: var(--space-2);">Message Sent!</h3>
+                  <p style="color: var(--text-secondary);">Ashley will get back to you within 24 hours. For faster response, call or text (817) 422-9613.</p>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -348,6 +356,50 @@
   <script src="js/analytics.js" defer></script>
   <script src="js/components.js" defer></script>
   <script src="js/nav.js" defer></script>
+
+  <!-- Contact form success state -->
+  <script>
+    // Show success message after form submission
+    if (window.location.search.includes('success') || document.referrer.includes('formspree')) {
+      var form = document.querySelector('.contact-form');
+      var success = document.getElementById('contact-success');
+      if (form && success) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      }
+    }
+
+    // Handle Formspree AJAX submission
+    var contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = contactForm.querySelector('button[type="submit"]');
+        var originalText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+
+        fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (response) {
+          if (response.ok) {
+            contactForm.style.display = 'none';
+            document.getElementById('contact-success').style.display = 'block';
+          } else {
+            btn.disabled = false;
+            btn.textContent = originalText;
+            alert('Something went wrong. Please try again or call (817) 422-9613.');
+          }
+        }).catch(function () {
+          btn.disabled = false;
+          btn.textContent = originalText;
+          alert('Something went wrong. Please try again or call (817) 422-9613.');
+        });
+      });
+    }
+  </script>
 
   <!-- Highlight today's hours row -->
   <script>

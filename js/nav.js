@@ -25,6 +25,33 @@
     }
   }
 
+  /* ─── Focus Trap ───────────────────────────────────── */
+  function trapFocus(menuEl) {
+    var focusable = menuEl.querySelectorAll('a, button, input, [tabindex]:not([tabindex="-1"])');
+    if (focusable.length === 0) return;
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+
+    first.focus();
+
+    menuEl._trapHandler = function (e) {
+      if (e.key !== 'Tab') return;
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    };
+    menuEl.addEventListener('keydown', menuEl._trapHandler);
+  }
+
+  function releaseFocus(menuEl) {
+    if (menuEl._trapHandler) {
+      menuEl.removeEventListener('keydown', menuEl._trapHandler);
+      delete menuEl._trapHandler;
+    }
+  }
+
   /* ─── Mobile Menu Toggle ───────────────────────────── */
   function openMenu() {
     if (!mobileMenu || !backdrop || !hamburger) return;
@@ -34,16 +61,19 @@
     hamburger.setAttribute('aria-expanded', 'true');
     hamburger.setAttribute('aria-label', 'Close menu');
     document.body.classList.add('body--menu-open');
+    trapFocus(mobileMenu);
   }
 
   function closeMenu() {
     if (!mobileMenu || !backdrop || !hamburger) return;
+    releaseFocus(mobileMenu);
     mobileMenu.classList.remove('site-nav__mobile-menu--open');
     backdrop.classList.remove('site-nav__mobile-backdrop--visible');
     hamburger.classList.remove('site-nav__hamburger--open');
     hamburger.setAttribute('aria-expanded', 'false');
     hamburger.setAttribute('aria-label', 'Open menu');
     document.body.classList.remove('body--menu-open');
+    hamburger.focus();
   }
 
   function toggleMenu() {
@@ -121,5 +151,21 @@
     // components.js injects synchronously on DOMContentLoaded,
     // so we use requestAnimationFrame to run after it
     requestAnimationFrame(init);
+  });
+
+  // Scroll reveal
+  var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      revealObserver.observe(el);
+    });
   });
 })();

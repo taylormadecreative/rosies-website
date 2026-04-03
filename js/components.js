@@ -8,6 +8,7 @@
 
   /* ─── Nav HTML ─────────────────────────────────────── */
   const navHTML = `
+    <a href="#main-content" class="skip-to-content sr-only" style="position:absolute;top:-100px;left:0;z-index:9999;background:var(--accent);color:white;padding:12px 24px;border-radius:0 0 8px 0;font-weight:600;text-decoration:none;transition:top 0.2s;" onfocus="this.style.top='0'" onblur="this.style.top='-100px'">Skip to content</a>
     <a href="/" class="site-nav__logo" aria-label="Rosie's Beauty Spa — Home">
       <img src="/assets/images/rosies-logo-light.jpg" alt="Rosie's Beauty Spa" width="160" height="52">
     </a>
@@ -47,7 +48,7 @@
     <div class="site-nav__mobile-backdrop" aria-hidden="true"></div>
 
     <!-- Mobile Menu -->
-    <div class="site-nav__mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <div class="site-nav__mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
       <a href="/">Home</a>
       <a href="/services/">Services</a>
       <div class="site-nav__mobile-menu-sub">
