@@ -9,7 +9,7 @@
   /* ─── Nav HTML ─────────────────────────────────────── */
   const navHTML = `
     <a href="/" class="site-nav__logo" aria-label="Rosie's Beauty Spa — Home">
-      <img src="/assets/images/rosies-logo.png" alt="Rosie's Beauty Spa" width="120" height="40">
+      <img src="/assets/images/rosies-logo-light.jpg" alt="Rosie's Beauty Spa" width="160" height="52">
     </a>
 
     <nav class="site-nav__links desktop-only" aria-label="Main navigation">
@@ -79,7 +79,7 @@
       <!-- Brand Column -->
       <div>
         <div class="site-footer__logo">
-          <img src="/assets/images/rosies-logo.png" alt="Rosie's Beauty Spa" width="120" height="40">
+          <img src="/assets/images/rosies-logo.png" alt="Rosie's Beauty Spa" width="160" height="52" style="filter: brightness(1.1);">
         </div>
         <p class="site-footer__tagline">Corrective Skincare. Made for Your Melanin.</p>
       </div>
