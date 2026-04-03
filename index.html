@@ -241,20 +241,66 @@
     <section class="section reveal" style="padding-top:0;">
       <div class="container">
         <h2 class="section-title" style="text-align:center;">Real Results from Real Clients</h2>
-        <p style="text-align:center;color:var(--text-secondary);margin-top:var(--space-2);margin-bottom:var(--space-8);">Before &amp; After — hyperpigmentation, acne scarring, and uneven tone treated at Rosie's.</p>
-        <div class="treatments-grid">
-          <div class="reveal reveal-delay-1" style="text-align:center;">
-            <img src="assets/images/before-after-hyperpigmentation.png" alt="Before and after hyperpigmentation treatment at Rosie's Beauty Spa" width="400" height="500" loading="lazy" style="width:100%;border-radius:var(--radius-card);object-fit:cover;">
-            <p style="margin-top:var(--space-3);font-weight:600;color:var(--text-primary);">Hyperpigmentation</p>
+        <p style="text-align:center;color:var(--text-secondary);margin-top:var(--space-2);margin-bottom:var(--space-8);">Before &amp; After — hyperpigmentation, acne scarring, and uneven tone treated at Rosie's. Drag the handle to compare.</p>
+        <div class="ba-grid">
+
+          <!-- Slider 1: Hyperpigmentation -->
+          <div class="reveal reveal-delay-1" style="width:100%;max-width:400px;">
+            <div class="ba-slider" data-ba-slider>
+              <img src="assets/images/before-after-hyperpigmentation.png" alt="Hyperpigmentation treatment results — after" class="ba-slider__after" loading="lazy">
+              <img src="assets/images/before-after-hyperpigmentation.png" alt="Hyperpigmentation treatment results — before" class="ba-slider__before" loading="lazy">
+              <div class="ba-slider__handle"
+                tabindex="0"
+                role="slider"
+                aria-label="Drag to compare before and after"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="50"
+                aria-hidden="false"></div>
+              <span class="ba-slider__label ba-slider__label--before">Before</span>
+              <span class="ba-slider__label ba-slider__label--after">After</span>
+            </div>
+            <p class="ba-caption">Hyperpigmentation Correction</p>
           </div>
-          <div class="reveal reveal-delay-2" style="text-align:center;">
-            <img src="assets/images/before-after-acne-scarring.png" alt="Before and after acne scarring treatment at Rosie's Beauty Spa" width="400" height="500" loading="lazy" style="width:100%;border-radius:var(--radius-card);object-fit:cover;">
-            <p style="margin-top:var(--space-3);font-weight:600;color:var(--text-primary);">Acne Scarring</p>
+
+          <!-- Slider 2: Acne Scarring -->
+          <div class="reveal reveal-delay-2" style="width:100%;max-width:400px;">
+            <div class="ba-slider" data-ba-slider>
+              <img src="assets/images/before-after-acne-scarring.png" alt="Acne scarring treatment results — after" class="ba-slider__after" loading="lazy">
+              <img src="assets/images/before-after-acne-scarring.png" alt="Acne scarring treatment results — before" class="ba-slider__before" loading="lazy">
+              <div class="ba-slider__handle"
+                tabindex="0"
+                role="slider"
+                aria-label="Drag to compare before and after"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="50"
+                aria-hidden="false"></div>
+              <span class="ba-slider__label ba-slider__label--before">Before</span>
+              <span class="ba-slider__label ba-slider__label--after">After</span>
+            </div>
+            <p class="ba-caption">Acne Scar Treatment</p>
           </div>
-          <div class="reveal reveal-delay-3" style="text-align:center;">
-            <img src="assets/images/before-after-uneven-tone.png" alt="Before and after uneven skin tone treatment at Rosie's Beauty Spa" width="400" height="500" loading="lazy" style="width:100%;border-radius:var(--radius-card);object-fit:cover;">
-            <p style="margin-top:var(--space-3);font-weight:600;color:var(--text-primary);">Uneven Tone</p>
+
+          <!-- Slider 3: Uneven Tone -->
+          <div class="reveal reveal-delay-3" style="width:100%;max-width:400px;">
+            <div class="ba-slider" data-ba-slider>
+              <img src="assets/images/before-after-uneven-tone.png" alt="Uneven skin tone treatment results — after" class="ba-slider__after" loading="lazy">
+              <img src="assets/images/before-after-uneven-tone.png" alt="Uneven skin tone treatment results — before" class="ba-slider__before" loading="lazy">
+              <div class="ba-slider__handle"
+                tabindex="0"
+                role="slider"
+                aria-label="Drag to compare before and after"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="50"
+                aria-hidden="false"></div>
+              <span class="ba-slider__label ba-slider__label--before">Before</span>
+              <span class="ba-slider__label ba-slider__label--after">After</span>
+            </div>
+            <p class="ba-caption">Skin Tone Evening</p>
           </div>
+
         </div>
         <a href="https://pocketsuite.io/book/rosies-beauty-spa/items/new-clients%2C-start-here" class="btn-primary" style="display:block;width:fit-content;margin:var(--space-8) auto 0;" data-track="book" data-service="before-after-cta">Start Your Transformation</a>
       </div>
@@ -395,6 +441,65 @@
   <script src="js/analytics.js" defer></script>
   <script src="js/components.js" defer></script>
   <script src="js/nav.js" defer></script>
+
+
+  <!-- ═══ Before/After Slider ═══ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('[data-ba-slider]').forEach(function (slider) {
+        var handle = slider.querySelector('.ba-slider__handle');
+        var before = slider.querySelector('.ba-slider__before');
+        var isDragging = false;
+
+        function updateSlider(x) {
+          var rect = slider.getBoundingClientRect();
+          var pos = (x - rect.left) / rect.width;
+          pos = Math.max(0.05, Math.min(0.95, pos));
+          var pct = pos * 100;
+          handle.style.left = pct + '%';
+          before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+          handle.setAttribute('aria-valuenow', Math.round(pct));
+        }
+
+        // Mouse events
+        slider.addEventListener('mousedown', function (e) {
+          isDragging = true;
+          updateSlider(e.clientX);
+        });
+        window.addEventListener('mousemove', function (e) {
+          if (isDragging) updateSlider(e.clientX);
+        });
+        window.addEventListener('mouseup', function () {
+          isDragging = false;
+        });
+
+        // Touch events
+        slider.addEventListener('touchstart', function (e) {
+          isDragging = true;
+          updateSlider(e.touches[0].clientX);
+        }, { passive: true });
+        slider.addEventListener('touchmove', function (e) {
+          if (isDragging) updateSlider(e.touches[0].clientX);
+        }, { passive: true });
+        slider.addEventListener('touchend', function () {
+          isDragging = false;
+        });
+
+        // Keyboard support
+        handle.addEventListener('keydown', function (e) {
+          var currentPct = parseFloat(handle.style.left) || 50;
+          var newPct = currentPct;
+          if (e.key === 'ArrowLeft') newPct = Math.max(5, currentPct - 5);
+          else if (e.key === 'ArrowRight') newPct = Math.min(95, currentPct + 5);
+          else return;
+          e.preventDefault();
+          handle.style.left = newPct + '%';
+          before.style.clipPath = 'inset(0 ' + (100 - newPct) + '% 0 0)';
+          handle.setAttribute('aria-valuenow', Math.round(newPct));
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
