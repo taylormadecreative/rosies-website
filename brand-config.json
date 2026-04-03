@@ -1,0 +1,30 @@
+{
+  "client": "Rosie's Beauty Spa",
+  "owner": "Ashley Hunt",
+  "location": "Arlington, TX (DFW)",
+  "industry": "Corrective Skincare / Esthetics",
+  "specialty": "Corrective skincare for Black and brown skin — hyperpigmentation, acne, dark spots, uneven tone",
+  "audience": {
+    "primary": "Black women 25-40, DFW, working professionals",
+    "secondary": "Black women 30-45, DFW, moms with post-pregnancy skin concerns",
+    "psychographics": "Invested in self-care, frustrated by generic skincare, wants someone who understands melanin-rich skin"
+  },
+  "colors": {
+    "primary": "#9B1B21",
+    "accent": "#E7D4CC",
+    "dark": "#1E1218",
+    "background": "#F6F2EF",
+    "gold": "#D4A843"
+  },
+  "typography_feel": "Warm serif headings (editorial/luxury) + clean modern sans body",
+  "imagery_style": "Warm, inviting, real — NOT clinical or stock. Black women with glowing melanin-rich skin. Natural beauty, warm lighting, intimate spa environment. Close-ups of dewy skin, soft golden light, treatment room ambiance.",
+  "mood": "Premium but approachable. Luxury spa meets your best friend who happens to be a skincare expert.",
+  "voice": "Warm, personal, confident. Uses 'Rosebud' for clients. Empowering without being preachy.",
+  "competitors": ["Heyday", "Glowbar", "Skin Laundry"],
+  "social": {
+    "instagram": "@rosiesbeautyspatx",
+    "tiktok": "@allgoodw_awood"
+  },
+  "banned_words": ["cheap", "discount", "anti-aging", "flawless", "perfect skin", "fix", "problem skin"],
+  "logo_path": "/Users/nelsontaylor/Documents/rosies-website/assets/images/rosies-logo-light.jpg"
+}
