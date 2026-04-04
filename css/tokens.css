@@ -5,25 +5,28 @@
 
 /* ─── Fonts ─────────────────────────────────────────── */
 @font-face {
-  font-family: 'Cardo';
-  src: url('../assets/fonts/Cardo-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Figtree';
-  src: url('../assets/fonts/Figtree-Regular.woff2') format('woff2');
+  font-family: 'Hello Paris Serif';
+  src: url('../assets/fonts/HelloParis-Regular.woff') format('woff'),
+       url('../assets/fonts/HelloParis-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Figtree';
-  src: url('../assets/fonts/Figtree-SemiBold.woff2') format('woff2');
-  font-weight: 600;
+  font-family: 'Hello Paris Serif';
+  src: url('../assets/fonts/HelloParis-Medium.woff') format('woff'),
+       url('../assets/fonts/HelloParis-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hello Paris Serif';
+  src: url('../assets/fonts/HelloParis-Bold.woff') format('woff'),
+       url('../assets/fonts/HelloParis-Bold.ttf') format('truetype');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -82,8 +85,8 @@
   --bg-outer:        #E8E0DB;
 
   /* ─── Typography ───────────────────────────────────── */
-  --font-heading:    'Cardo', Georgia, 'Times New Roman', serif;
-  --font-body:       'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-heading:    'Hello Paris Serif', Georgia, 'Times New Roman', serif;
+  --font-body:       'Futura', 'Century Gothic', 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
 
   /* Type Scale */
   --text-large-title:  clamp(28px, 5vw, 34px);

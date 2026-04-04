@@ -57,9 +57,9 @@ h1, h2, h3, h4, h5, h6 {
 h1 { font-size: var(--text-large-title); }
 h2 { font-size: var(--text-title1); }
 h3 { font-size: var(--text-title2); }
-h4 { font-size: var(--text-title3); }
-h5 { font-size: var(--text-headline); }
-h6 { font-size: var(--text-body); }
+h4 { font-size: var(--text-title3); font-weight: 500; }
+h5 { font-size: var(--text-headline); font-weight: 500; }
+h6 { font-size: var(--text-body); font-weight: 500; }
 
 /* ─── Links ─────────────────────────────────────────── */
 a {

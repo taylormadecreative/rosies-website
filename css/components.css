@@ -1058,7 +1058,7 @@
 .site-footer__heading {
   font-family: var(--font-heading);
   font-size: var(--text-headline);
-  font-weight: 700;
+  font-weight: 500;
   color: #fff;
   margin-bottom: var(--space-4);
 }
